@@ -24,4 +24,15 @@ public class Movimento : MonoBehaviour {
             rigid.AddForce(new Vector3(0,forcaDoPulo,0), ForceMode.Impulse);
         }
 	}
+
+    void OnCollisionEnter(Collision collision){
+        if(collision.gameObject.name != "Plane")
+        {
+            this.velocidade = 0;
+            Application.LoadLevel (0);
+
+        }
+
+
+    }
 }
